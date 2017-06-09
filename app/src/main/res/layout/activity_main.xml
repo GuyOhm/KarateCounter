@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/web_hi_res_512"
+    android:orientation="vertical"
+    tools:context="com.example.android.karatecounter.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/round_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/init_round"
+            android:textSize="@dimen/kick_foul_size" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/blue_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
+            android:fontFamily="@string/score_font"
+            android:gravity="center"
+            android:text="@string/init_score"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/score_size" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/red_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:fontFamily="@string/score_font"
+            android:gravity="center"
+            android:text="@string/init_score"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/score_size" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/xtra_spacing"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:onClick="addOnePointForBlue"
+                        android:text="@string/btn_1" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:onClick="addTwoPointsForBlue"
+                        android:text="@string/btn_2" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:onClick="addThreePointsForBlue"
+                        android:text="@string/btn_3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:onClick="addOneKickForBlue"
+                            android:text="@string/btn_kicks" />
+
+                        <TextView
+                            android:id="@+id/blue_kicks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/init_score"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="@dimen/kick_foul_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:onClick="addOneFoulForBlue"
+                            android:text="@string/btn_fouls" />
+
+                        <TextView
+                            android:id="@+id/blue_fouls"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/init_score"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="@dimen/kick_foul_size" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:onClick="addOnePointForRed"
+                        android:text="@string/btn_1" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:onClick="addTwoPointsForRed"
+                        android:text="@string/btn_2" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:onClick="addThreePointsForRed"
+                        android:text="@string/btn_3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/btn_spacing"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/red_kicks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/init_score"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="@dimen/kick_foul_size" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:onClick="addOneKickForRed"
+                            android:text="@string/btn_kicks" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/red_fouls"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/init_score"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="@dimen/kick_foul_size" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:onClick="addOneFoulForRed"
+                            android:text="@string/btn_fouls" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:onClick="resetScores"
+                    android:text="@string/btn_reset" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
